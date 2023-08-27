@@ -1,0 +1,31 @@
+**Forum-style name backgrounds**
+
+Applies a background to a chosen user's name, commonly a paid feature on many forums.
+
+__Remember to change _[src*="589322754470445057"]_ to include your ID!__
+
+```css
+:root { 
+--username-bg: url(//raw.githubusercontent.com/dwnas/assets/main/snippets/nameBackground/8.gif); /*
+                      To change the background image, please edit the number. (1-9)
+*/}
+
+/* chat field */           
+[class*=contents]:has(img[src*="589322754470445057"]) [class*=username],
+/* memberlist */
+[role=listitem] :has(img[src*="589322754470445057"]) [class*=name-],
+/* settings profile card */
+[class*=profileCard] span,
+/* reviewdb */
+.vc-rdb-view :has(img[src*="589322754470445057"]) [class*=username],
+/* replies */
+[class*=repliedMessage]:has(img[src*="589322754470445057"]) [class*=username]
+ 
+ /* elements that aren't sized correctly, uncomment below if you want */
+
+/*,[class*=nameTag] [data-text-variant="text-sm/normal"],
+[class*=userPopoutInner]:has(img[src*="589322754470445057"]) [class*=nickname],
+[class*=voiceUser]:has([style*="589322754470445057"]) [class*=username]*/ {
+    background-image: var(--username-bg) !important;
+    text-shadow: 1px 1px 4px;
+}```
